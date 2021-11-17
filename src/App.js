@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import UserProfile from "./components/user-profile/user-profile.component";
+import UserList from './components/user-list/user-list.component';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserList dataSource='https://jsonplaceholder.typicode.com/users'/>
+      <UserProfile name='Grace' email='123@gmail.com' dataSource='https://jsonplaceholder.typicode.com/posts'/>
     </div>
   );
 }
 
 export default App;
+
+// Components are just functions and classes that receive some props and then returns us some mark up
+// HOC: is just a function that gets a component and returns us a new enhanced component
